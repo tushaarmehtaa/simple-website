@@ -48,22 +48,22 @@ export function PersonalWebsiteComponent() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <Button variant="ghost" size="icon" asChild>
-            <a href="#" aria-label="Twitter profile">
+            <a href="https://x.com/tushaarmehtaa" target="_blank" rel="noopener noreferrer" aria-label="Twitter profile">
               <Twitter className="h-5 w-5" />
             </a>
           </Button>
           <Button variant="ghost" size="icon" asChild>
-            <a href="#" aria-label="GitHub profile">
+            <a href="https://github.com/tushaarmehtaa" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
               <Github className="h-5 w-5" />
             </a>
           </Button>
           <Button variant="ghost" size="icon" asChild>
-            <a href="#" aria-label="Blog">
+            <a href="https://tarry-muscle-429.notion.site/Tushar-s-Writing-Portfolio-13e9c6707d96808f9ccfdc1c481b33c4" target="_blank" rel="noopener noreferrer" aria-label="Writing Portfolio">
               <Pen className="h-5 w-5" />
             </a>
           </Button>
           <Button variant="ghost" size="icon" asChild>
-            <a href="#" aria-label="Email">
+            <a href="mailto:tusharmehta2001@icloud.com" aria-label="Email">
               <Mail className="h-5 w-5" />
             </a>
           </Button>
@@ -82,7 +82,7 @@ export function PersonalWebsiteComponent() {
             <div className="flex justify-between items-center">
               <CardTitle>Currently</CardTitle>
               <Button variant="link" className="text-sm" asChild>
-                <a href="#">
+                <a href="/past-roles">
                   see past roles
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
@@ -107,7 +107,7 @@ export function PersonalWebsiteComponent() {
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-semibold">Featured Work</h2>
           <Button variant="link" asChild>
-            <a href="#">
+            <a href="/featured-work">
               see all
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
@@ -159,7 +159,7 @@ export function PersonalWebsiteComponent() {
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
           <h2 className="text-2xl font-semibold">Writing</h2>
           <Button asChild>
-            <a href="#">check out my newsletter</a>
+            <a href="https://tushaarmehtaa.substack.com/" target="_blank" rel="noopener noreferrer">check out my newsletter</a>
           </Button>
         </div>
         <div className="space-y-6">
@@ -182,21 +182,17 @@ export function PersonalWebsiteComponent() {
         <h2 className="text-2xl font-semibold mb-6">Connect</h2>
         <Card className="hover:shadow-lg transition-shadow duration-300">
           <CardContent className="pt-6">
-            <p className="text-muted-foreground mb-6">
+            <p className="text-muted-foreground mb-4">
               I'm always interested in connecting with fellow writers, startup operators, and founders. I love talking about tech, health, education, and opportunities, so if you have something on your mind, my Twitter DMs are always open.
             </p>
-            <div className="space-y-4">
-              <Button variant="link" className="p-0" asChild>
-                <a href="#">
-                  Subscribe to my newsletter, where I share everything I'm learning 
-                </a>
-              </Button>
-              <Button variant="link" className="p-0" asChild>
-                <a href="#">
-                   or simply shoot me an email.
-                </a>
-              </Button>
-            </div>
+
+            <p className="text-muted-foreground mb-4">
+              Subscribe to my <a href="https://tushaarmehtaa.substack.com/" target="_blank" rel="noopener noreferrer">newsletter</a>, where I share everything I'm learning.
+            </p>
+
+            <p className="text-muted-foreground">
+              Or simply shoot me an email.
+            </p>
           </CardContent>
         </Card>
       </section>
