@@ -72,7 +72,7 @@ export default function PersonalWebsiteComponent() {
           </Button>
           <Button variant="ghost" size="icon" asChild>
             <a 
-              href="https://tushaarmehtaa.substack.com" 
+              href="https://tarry-muscle-429.notion.site/Tushar-s-Writing-Portfolio-13e9c6707d96808f9ccfdc1c481b33c4" 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="Writing Portfolio"
