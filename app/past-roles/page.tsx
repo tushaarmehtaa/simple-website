@@ -154,42 +154,41 @@ export default function PastRoles() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 min-h-screen bg-background text-foreground">
-      <header className="mb-16">
-        <div className="flex items-center gap-4 mb-8">
-          <Button variant="ghost" size="icon" asChild>
-            <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors">
-              <ArrowLeft className="h-6 w-6" />
-            </Link>
-          </Button>
-          <h1 className="text-3xl sm:text-4xl font-bold">Past Roles</h1>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          >
-            {theme === "dark" ? (
-              <Sun className="h-6 w-6" />
-            ) : (
-              <Moon className="h-6 w-6" />
-            )}
-          </Button>
-        </div>
-        <div className="flex gap-4 mb-8">
-          <Button 
-            variant={activeQuest === 'main-quests' ? "default" : "outline"}
-            onClick={() => setActiveQuest('main-quests')}
-          >
-            Main Quests
-          </Button>
-          <Button 
-            variant={activeQuest === 'side-quests' ? "default" : "outline"}
-            onClick={() => setActiveQuest('side-quests')}
-          >
-            Side Quests
-          </Button>
-        </div>
-      </header>
+    <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 min-h-screen bg-background text-foreground">
+      <div className="flex items-center justify-between mb-8">
+        <Button variant="ghost" asChild>
+          <Link href="/" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
+            <ArrowLeft className="h-4 w-4" />
+            Back
+          </Link>
+        </Button>
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        >
+          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          <span className="sr-only">Toggle theme</span>
+        </Button>
+      </div>
+
+      <h1 className="text-4xl font-bold mb-8">Past Roles</h1>
+
+      <div className="flex gap-4 mb-8">
+        <Button 
+          variant={activeQuest === 'main-quests' ? "default" : "outline"}
+          onClick={() => setActiveQuest('main-quests')}
+        >
+          Main Quests
+        </Button>
+        <Button 
+          variant={activeQuest === 'side-quests' ? "default" : "outline"}
+          onClick={() => setActiveQuest('side-quests')}
+        >
+          Side Quests
+        </Button>
+      </div>
 
       <main>
         <div className="space-y-8">
@@ -273,7 +272,7 @@ export default function PastRoles() {
           </Button>
           <Button variant="ghost" size="icon" asChild>
             <a 
-              href="https://tarry-muscle-429.notion.site/Tushar-s-Writing-Portfolio-13e9c6707d96808f9ccfdc1c481b33c4" 
+              href="https://tushaarmehtaa.substack.com" 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="Writing Portfolio"
@@ -287,6 +286,22 @@ export default function PastRoles() {
               aria-label="Email me"
             >
               <Mail className="h-5 w-5" />
+            </a>
+          </Button>
+          <Button variant="ghost" size="icon" asChild>
+            <a 
+              href="https://tushaarmehtaa.substack.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Newsletter"
+            >
+              <svg 
+                viewBox="0 0 24 24" 
+                className="h-5 w-5" 
+                fill="currentColor"
+              >
+                <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
+              </svg>
             </a>
           </Button>
         </div>
