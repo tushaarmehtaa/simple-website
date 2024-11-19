@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { useTheme } from "next-themes"
-import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
