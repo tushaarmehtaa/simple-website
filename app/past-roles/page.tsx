@@ -8,7 +8,23 @@ import { useTheme } from "next-themes"
 import Link from 'next/link'
 import * as React from 'react'
 
-const mainQuests = [
+interface Project {
+  title: string;
+  link?: string;
+  description: string;
+  parentCompany?: {
+    name: string;
+    link: string;
+  };
+  italic?: string;
+}
+
+interface Quest {
+  year: string;
+  projects: Project[];
+}
+
+const mainQuests: Quest[] = [
   {
     year: '2024',
     projects: [
@@ -57,7 +73,7 @@ const mainQuests = [
   }
 ]
 
-const sideQuests = [
+const sideQuests: Quest[] = [
   {
     year: '2024',
     projects: [

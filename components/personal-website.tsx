@@ -74,7 +74,7 @@ export function PersonalWebsiteComponent() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          Hey there, I'm Tushar. I am a writer specializing in content marketing for tech startups.
+          Hey there, I&apos;m Tushar. I am a writer specializing in content marketing for tech startups.
         </motion.p>
 
         <Card className="hover:shadow-lg transition-shadow duration-300">
@@ -91,13 +91,13 @@ export function PersonalWebsiteComponent() {
           </CardHeader>
           <CardContent className="space-y-4 text-muted-foreground">
             <p>
-              I'm currently working with 5aitec (Sentient Foundation) Builders Central (Zoho Creator) to write both short-form and long-form video scripts.
+              I&apos;m currently working with 5aitec (Sentient Foundation) Builders Central (Zoho Creator) to write both short-form and long-form video scripts.
             </p>
             <p>
-              I'm also leading a consumer crypto community called Farcasters Builders India with support from Base.
+              I&apos;m also leading a consumer crypto community called Farcasters Builders India with support from Base.
             </p>
             <p>
-              Driven by genuine curiosity, I'm experimenting with Retrieval-Augmented Generation (RAG) and multi-LLM AI agents to help content teams go brrrr.
+              Driven by genuine curiosity, I&apos;m experimenting with Retrieval-Augmented Generation (RAG) and multi-LLM AI agents to help content teams go brrrr.
             </p>
           </CardContent>
         </Card>
@@ -183,11 +183,11 @@ export function PersonalWebsiteComponent() {
         <Card className="hover:shadow-lg transition-shadow duration-300">
           <CardContent className="pt-6">
             <p className="text-muted-foreground mb-4">
-              I'm always interested in connecting with fellow writers, startup operators, and founders. I love talking about tech, health, education, and opportunities, so if you have something on your mind, my Twitter DMs are always open.
+              I&apos;m always interested in connecting with fellow writers, startup operators, and founders. I love talking about tech, health, education, and opportunities, so if you have something on your mind, my Twitter DMs are always open.
             </p>
 
             <p className="text-muted-foreground mb-4">
-              Subscribe to my <a href="https://tushaarmehtaa.substack.com/" target="_blank" rel="noopener noreferrer">newsletter</a>, where I share everything I'm learning.
+              Subscribe to my <a href="https://tushaarmehtaa.substack.com/" target="_blank" rel="noopener noreferrer">newsletter</a>, where I share everything I&apos;m learning.
             </p>
 
             <p className="text-muted-foreground">
