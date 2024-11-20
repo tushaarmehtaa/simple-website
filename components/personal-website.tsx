@@ -24,7 +24,7 @@ export default function PersonalWebsiteComponent() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 min-h-screen bg-background text-foreground">
       <header className="mb-12 sm:mb-16">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mb-8">
+        <div className="flex flex-col sm:flex-row justify-between items-center w-full gap-4 mb-8">
           <motion.h1 
             className="text-2xl sm:text-3xl md:text-4xl font-bold"
             initial={{ opacity: 0, y: -20 }}
@@ -33,15 +33,17 @@ export default function PersonalWebsiteComponent() {
           >
             Tushar Mehta
           </motion.h1>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-          >
-            <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-            <span className="sr-only">Toggle theme</span>
-          </Button>
+          <div className="flex justify-center sm:justify-end w-full sm:w-auto">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            >
+              <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <span className="sr-only">Toggle theme</span>
+            </Button>
+          </div>
         </div>
 
         <motion.div 
@@ -141,12 +143,14 @@ export default function PersonalWebsiteComponent() {
           <CardHeader className="space-y-2 sm:space-y-0">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
               <CardTitle>Currently</CardTitle>
-              <Button variant="link" className="text-sm hover:text-orange-400 transition-colors" asChild>
-                <a href="/past-roles">
-                  see past roles
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
+              <div className="flex justify-center sm:justify-end w-full sm:w-auto">
+                <Button variant="link" className="text-sm hover:text-orange-400 transition-colors" asChild>
+                  <a href="/past-roles">
+                    see past roles
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
             </div>
           </CardHeader>
           <CardContent className="space-y-4 text-muted-foreground">
@@ -225,14 +229,16 @@ export default function PersonalWebsiteComponent() {
       </header>
 
       <section className="mb-12 sm:mb-16">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+        <div className="flex flex-col sm:flex-row justify-between items-center w-full gap-4 mb-6">
           <h2 className="text-xl sm:text-2xl font-semibold">Featured Work</h2>
-          <Button variant="link" className="hover:text-orange-400 transition-colors" asChild>
-            <a href="/featured-work">
-              see all
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
+          <div className="flex justify-center sm:justify-end w-full sm:w-auto">
+            <Button variant="link" className="hover:text-orange-400 transition-colors" asChild>
+              <a href="/featured-work">
+                see all
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          </div>
         </div>
         <div className="space-y-6">
           <Dialog>
@@ -304,11 +310,15 @@ export default function PersonalWebsiteComponent() {
       </section>
 
       <section className="mb-12 sm:mb-16">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+        <div className="flex flex-col sm:flex-row justify-between items-center w-full gap-4 mb-6">
           <h2 className="text-xl sm:text-2xl font-semibold">Writing</h2>
-          <Button asChild>
-            <a href="https://tushaarmehtaa.substack.com/" target="_blank" rel="noopener noreferrer" className="hover:text-orange-400 transition-colors">check out my newsletter</a>
-          </Button>
+          <div className="flex justify-center sm:justify-end w-full sm:w-auto">
+            <Button asChild>
+              <a href="https://tushaarmehtaa.substack.com/" target="_blank" rel="noopener noreferrer" className="hover:text-orange-400 transition-colors">
+                check out my newsletter
+              </a>
+            </Button>
+          </div>
         </div>
         <div className="space-y-6">
           <Card className="hover:shadow-lg transition-shadow duration-300">
