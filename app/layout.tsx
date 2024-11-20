@@ -15,12 +15,9 @@ export const metadata: Metadata = {
   title: "Tushaar Mehta",
   description: "I'm Tushaar and this is my little corner of the internet where I try to explain what I do.",
   icons: {
-    icon: [
-      { url: "/profile.jpg", sizes: "32x32" },
-      { url: "/profile.jpg", sizes: "16x16" }
-    ],
-    shortcut: [{ url: "/profile.jpg" }],
-    apple: [{ url: "/profile.jpg" }],
+    icon: "/profile.jpg",
+    shortcut: "/profile.jpg",
+    apple: "/profile.jpg",
   },
   openGraph: {
     title: "Tushaar Mehta",
