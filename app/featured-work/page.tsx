@@ -17,17 +17,42 @@ const featuredWork = [
       "You name it, we did it. And guess what? By November 2024, we crossed 100k followers."
     ],
     image: "/builders-central.png",
-    link: "https://builderscentral.xyz"
+    link: "https://www.instagram.com/builders.central/"
   },
   {
-    title: "Karthik Sridharan: 45 to 90k",
+    title: "Karthik Sridharan: 35k to 90k",
     description: "Founder personal brand case study",
     content: [
-      "I joined as a full-time employee as social media manager. Managing 3 pages at Flexiple. The founder's page. Another cofounder's page. And buildd's page. The founder's page went 2x. The other cofounder's page also doubled. And buildd's page? We grew it to 15k.",
+      "I joined as a full-time employee as social media manager. Managing 3 pages at Flexiple. The founder's page. Another cofounder's page. And buildd's page. The founder's page went ~3x. The other cofounder's page also doubled. And buildd's page? We grew it to 15k.",
       "We did it all. Tweets. Threads. Mind maps. Partnerships. Launches. It was fun. And it was rewarding. Seeing those numbers climb."
     ],
     image: "/karthik-sridharan.png",
     link: "https://flexiple.com"
+  },
+  {
+    title: "More Scriptwriting Work",
+    description: "AI-generated content for tech channels",
+    content: [
+      "I've been working with pages like Terminal and 5aitec, focusing on short-form, tech-related scripts. While the process is still ongoing to achieve visible channel transformation, I genuinely enjoy creating this content.",
+      "Here are a couple of scripts that I particularly enjoyed writing:",
+      "1. [Instacart](https://www.instagram.com/reel/DAV3Xd0vNba/?igsh=MXUwazVpNDlpa2V4MA==)",
+      "2. [Heygen Avatars](https://www.instagram.com/reel/DBoYlRyMHp2/?igsh=MXQyYjZuMTZkOHBmZA==)",
+      "Fun fact: Both the audio and video in these projects are fully AI-generated—no human involvement at all!"
+    ],
+    image: "/scriptwriting.png"
+  },
+  {
+    title: "Podcast Production for Ayush Wadhwa",
+    description: "End-to-end podcast management and growth",
+    content: [
+      "This was my first paid opportunity back in 2021. I managed end-to-end podcast production, including:",
+      "- Finding and reaching out to guests",
+      "- Coming up with interview questions",
+      "- Developing distribution strategies",
+      "- Collaborating with editors and designers for short-form content derived from the podcast",
+      "During my time, YouTube subscribers grew from 13K to 26K, and Instagram followers skyrocketed from 35K to 250K by the time I left in 2022."
+    ],
+    image: "/podcast-production.png"
   }
 ]
 
@@ -90,7 +115,12 @@ export default function FeaturedWork() {
               </DialogHeader>
               <div className="space-y-4">
                 {work.content.map((paragraph, i) => (
-                  <p key={i}>{paragraph}</p>
+                  <p key={i} dangerouslySetInnerHTML={{
+                    __html: paragraph.replace(
+                      /\[([^\]]+)\]\(([^)]+)\)/g,
+                      '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">$1</a>'
+                    )
+                  }} />
                 ))}
               </div>
             </DialogContent>
