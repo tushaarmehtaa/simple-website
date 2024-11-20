@@ -11,6 +11,7 @@ const config: Config = {
   	extend: {
   		fontFamily: {
   			sans: ["var(--font-raleway)"],
+  			raleway: ["var(--font-raleway)"],
   		},
   		colors: {
   			background: 'hsl(var(--background))',
