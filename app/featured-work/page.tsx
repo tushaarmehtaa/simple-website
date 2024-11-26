@@ -39,7 +39,8 @@ const featuredWork = [
       "2. [Heygen Avatars](https://www.instagram.com/reel/DBoYlRyMHp2/?igsh=MXQyYjZuMTZkOHBmZA==)",
       "Fun fact: Both the audio and video in these projects are fully AI-generated—no human involvement at all!"
     ],
-    image: "/scriptwriting.png"
+    image: "/scriptwriting.png",
+    link: "https://www.instagram.com/reel/DAV3Xd0vNba/?igsh=MXUwazVpNDlpa2V4MA=="
   },
   {
     title: "Podcast Production for Ayush Wadhwa",
@@ -52,7 +53,8 @@ const featuredWork = [
       "- Collaborating with editors and designers for short-form content derived from the podcast",
       "During my time, YouTube subscribers grew from 13K to 26K, and Instagram followers skyrocketed from 35K to 250K by the time I left in 2022."
     ],
-    image: "/podcast-production.png"
+    image: "/podcast-production.png",
+    link: "https://www.youtube.com/@ayushwadhwa"
   }
 ]
 
