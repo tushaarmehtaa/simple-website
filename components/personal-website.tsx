@@ -151,16 +151,16 @@ export default function PersonalWebsiteComponent() {
           </CardHeader>
           <CardContent className="space-y-4 text-muted-foreground">
             <p>
-              I lead a consumer crypto community called{' '}
+              I lead community for {' '}
               <a 
                 href="https://0xfbi.com" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
               >
-                Farcasters Builders India
+                Farcaster Builders India (FBI)
               </a>{' '}
-              (FBI), supported by{' '}
+              , a talent collective on Ethereum, supported by {' '}
               <a 
                 href="https://www.base.org" 
                 target="_blank" 
@@ -171,7 +171,7 @@ export default function PersonalWebsiteComponent() {
               </a>.
             </p>
             <p>
-              I&apos;m also working with{' '}
+              I also consult with {' '}
               <a 
                 href="https://youtubeasaservice.com" 
                 target="_blank" 
@@ -179,7 +179,7 @@ export default function PersonalWebsiteComponent() {
                 className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
               >
                 YaaS
-              </a>, writing short-form and long-form video scripts for clients like{' '}
+              </a>, writing short-form and long-form video scripts for {' '}
               <a 
                 href="https://www.instagram.com/builders.central/" 
                 target="_blank" 
@@ -188,7 +188,7 @@ export default function PersonalWebsiteComponent() {
               >
                 Builders Central
               </a>{' '}
-              (Zoho Creator) and{' '}
+              (Zoho Creator). In the past, I’ve created content for Rainmatter Fund, LogX, Flexiple,{' '}
               <a 
                 href="https://www.instagram.com/5aitec/" 
                 target="_blank" 
@@ -206,19 +206,19 @@ export default function PersonalWebsiteComponent() {
               >
                 Sentient.Foundation
               </a>
-              ).
+              ) and a bunch of other tech companies.
             </p>
             <p>
-              On the side, I&apos;m{' '}
+              On the side, I’m {' '}
               <a 
                 href="https://x.com/tushaarmehtaa/status/1858404664548757714" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
               >
-                experimenting
+                tinkering
               </a>{' '}
-              with RAG and multi-LLM AI agents to help startup teams move fast and go brrrr.
+              with all things genAI, blending it into my interests like writing, reading, health, and science.
             </p>
           </CardContent>
         </Card>
@@ -311,6 +311,17 @@ export default function PersonalWebsiteComponent() {
           </Button>
         </div>
         <div className="space-y-6">
+        <Card className="hover:shadow-lg transition-shadow duration-300">
+            <a 
+              href="https://tushaarmehtaa.substack.com/p/do-not-look-for-goals-look-for-a" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="block p-4 sm:p-6 hover:bg-muted/50 transition-colors"
+            >
+              <CardTitle className="mb-2 hover:text-orange-400 transition-colors">Do not look for goals, look for a way of life.</CardTitle>
+              <CardDescription>Just recapping my January with things I recently read</CardDescription>
+            </a>
+          </Card>
           <Card className="hover:shadow-lg transition-shadow duration-300">
             <a 
               href="https://tushaarmehtaa.substack.com/p/the-best-thing-that-ever-happened?r=oh6t0" 
