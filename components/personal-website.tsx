@@ -306,7 +306,7 @@ export default function PersonalWebsiteComponent() {
               </div>
               <div className="p-4 sm:p-6">
                 <CardTitle className="mb-2 hover:text-orange-400 transition-colors">Post Generator</CardTitle>
-                <CardDescription className="text-muted-foreground">Mix and match any template or working social post with your original thought. You'll get a post that's yours, but already socially accepted.</CardDescription>
+                <CardDescription className="text-muted-foreground">Mix and match any template or working social post with your original thought. You&apos;ll get a post that&apos;s yours, but already socially accepted.</CardDescription>
                 <div className="mt-4 flex items-center text-muted-foreground">
                   <ExternalLink size={20} />
                 </div>
