@@ -151,27 +151,10 @@ export default function PersonalWebsiteComponent() {
           </CardHeader>
           <CardContent className="space-y-4 text-muted-foreground">
             <p>
-              I lead community for {' '}
-              <a 
-                href="https://0xfbi.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-              >
-                Farcaster Builders India (FBI)
-              </a>{' '}
-              , a talent collective on Ethereum, supported by {' '}
-              <a 
-                href="https://www.base.org" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-              >
-                Base
-              </a>.
+              I am currently looking for roles that will keep me close to tech teams and allow me to do marketing for them. Think technical writing, social and content marketing for tech companies, mainly in AI, health, No-code and the like.
             </p>
             <p>
-              I also consult with {' '}
+              I also consult for {' '}
               <a 
                 href="https://youtubeasaservice.com" 
                 target="_blank" 
@@ -179,7 +162,7 @@ export default function PersonalWebsiteComponent() {
                 className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
               >
                 YaaS
-              </a>, writing short-form and long-form video scripts for {' '}
+              </a>, writing short-form and long-form video scripts for one of their clients,{' '}
               <a 
                 href="https://www.instagram.com/builders.central/" 
                 target="_blank" 
@@ -188,37 +171,7 @@ export default function PersonalWebsiteComponent() {
               >
                 Builders Central
               </a>{' '}
-              (Zoho Creator). In the past, I’ve created content for Rainmatter Fund, LogX, Flexiple,{' '}
-              <a 
-                href="https://www.instagram.com/5aitec/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-              >
-                5aitec
-              </a>{' '}
-              ({' '}
-              <a 
-                href="https://sentient.foundation" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-              >
-                Sentient.Foundation
-              </a>
-              ) and a bunch of other tech companies.
-            </p>
-            <p>
-              On the side, I’m {' '}
-              <a 
-                href="https://x.com/tushaarmehtaa/status/1858404664548757714" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-              >
-                tinkering
-              </a>{' '}
-              with all things genAI, blending it into my interests like writing, reading, health, and science.
+              (Zoho Creator).
             </p>
           </CardContent>
         </Card>
@@ -300,6 +253,91 @@ export default function PersonalWebsiteComponent() {
               </div>
             </DialogContent>
           </Dialog>
+        </div>
+      </section>
+
+      <section className="mb-12 sm:mb-16">
+        <div className="flex flex-row justify-between items-center gap-4 mb-6">
+          <h2 className="text-xl sm:text-2xl font-semibold">Projects</h2>
+        </div>
+        <div className="mb-6">
+          <p className="text-muted-foreground">I have recently been trying to learn to code with AI and have built a couple of projects:</p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <Card className="hover:shadow-lg transition-shadow duration-300">
+            <a 
+              href="https://hemingway.fly.dev/landing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block h-full"
+            >
+              <div className="aspect-video w-full relative">
+                <Image
+                  src="/hemingway-preview.jpg"
+                  alt="HemingwayAI Preview"
+                  fill
+                  className="object-cover rounded-t-lg"
+                />
+              </div>
+              <div className="p-4 sm:p-6">
+                <CardTitle className="mb-2 hover:text-orange-400 transition-colors">HemingwayAI</CardTitle>
+                <CardDescription className="text-muted-foreground">A tool that allows marketers to clone themselves to save (a lot of) time writing.</CardDescription>
+                <div className="mt-4 flex items-center text-muted-foreground">
+                  <ExternalLink size={20} />
+                </div>
+              </div>
+            </a>
+          </Card>
+          
+          <Card className="hover:shadow-lg transition-shadow duration-300">
+            <a 
+              href="https://post-generator-seven.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block h-full"
+            >
+              <div className="aspect-video w-full relative">
+                <Image
+                  src="/post-generator-preview.jpg"
+                  alt="Post Generator Preview"
+                  fill
+                  className="object-cover rounded-t-lg"
+                />
+              </div>
+              <div className="p-4 sm:p-6">
+                <CardTitle className="mb-2 hover:text-orange-400 transition-colors">Post Generator</CardTitle>
+                <CardDescription className="text-muted-foreground">Mix and match any template or working social post with your original thought. You'll get a post that's yours, but already socially accepted.</CardDescription>
+                <div className="mt-4 flex items-center text-muted-foreground">
+                  <ExternalLink size={20} />
+                </div>
+              </div>
+            </a>
+          </Card>
+          
+          <Card className="hover:shadow-lg transition-shadow duration-300">
+            <a 
+              href="https://ai-scriptwriter.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block h-full"
+            >
+              <div className="aspect-video w-full relative">
+                <Image
+                  src="/script-writer-preview.jpg"
+                  alt="AI Script Writer Preview"
+                  fill
+                  className="object-cover rounded-t-lg object-top"
+                />
+              </div>
+              <div className="p-4 sm:p-6">
+                <CardTitle className="mb-2 hover:text-orange-400 transition-colors">AI Script Writer</CardTitle>
+                <CardDescription className="text-muted-foreground">An app that asked me what I wanted to write about, what kind of hook to use, and what to research, and gave me a reel in 15 seconds that took hours to write manually.</CardDescription>
+                <div className="mt-4 flex items-center text-muted-foreground">
+                  <ExternalLink size={20} />
+                </div>
+              </div>
+            </a>
+          </Card>
         </div>
       </section>
 
