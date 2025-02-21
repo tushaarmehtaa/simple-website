@@ -383,7 +383,7 @@ export default function PersonalWebsiteComponent() {
                 className="object-cover rounded-lg"
               />
               <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent h-1/3 text-white rounded-b-lg">
-                <h3 className="font-semibold mb-1 text-sm sm:text-base">Base Buildathon Kick-Off</h3>
+                <h3 className="font-semibold mb-1 text-sm sm:text-base">Base Buildathon</h3>
                 <p className="text-xs sm:text-sm text-gray-200">at Devfolio</p>
               </div>
             </div>
@@ -398,7 +398,7 @@ export default function PersonalWebsiteComponent() {
                 className="object-cover rounded-lg"
               />
               <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent h-1/3 text-white rounded-b-lg">
-                <h3 className="font-semibold mb-1 text-sm sm:text-base">20+ Base Activation Events</h3>
+                <h3 className="font-semibold mb-1 text-sm sm:text-base">20+ Base Events</h3>
                 <p className="text-xs sm:text-sm text-gray-200">During IBW and ETHIndia</p>
               </div>
             </div>
