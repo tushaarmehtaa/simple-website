@@ -117,7 +117,7 @@ export default function PersonalWebsiteComponent() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <span className="block">Hello Hello! I&apos;m Tushaar, and this is my little corner of the internet.</span>
+          <span className="block">Hello Hello! I&apos;m Tushaar, and this is my little corner of the world wide web.</span>
           
           <span className="block">I&apos;m a genuinely curious, internet kid, using this space to share and explain what I do.</span>
         </motion.p>
@@ -281,7 +281,7 @@ export default function PersonalWebsiteComponent() {
                 <DialogTitle>More Scriptwriting Work</DialogTitle>
                 <DialogDescription>AI-generated content for tech channels</DialogDescription>
               </DialogHeader>
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <div className="aspect-video relative">
                   <Image 
                     src="/scriptwriting.png" 
@@ -290,15 +290,15 @@ export default function PersonalWebsiteComponent() {
                     className="rounded-xl object-cover"
                   />
                 </div>
-                <p>I&apos;ve been working with pages like Terminal and 5aitec, focusing on short-form, tech-related scripts. While the process is still ongoing to achieve visible channel transformation, I genuinely enjoy creating this content.</p>
-                <p>Here are a couple of scripts that I particularly enjoyed writing:</p>
-                <ol className="list-decimal pl-5 space-y-2">
+                <p className="text-sm sm:text-base">I&apos;ve been working with pages like Terminal and 5aitec, focusing on short-form, tech-related scripts. While the process is still ongoing to achieve visible channel transformation, I genuinely enjoy creating this content.</p>
+                <p className="text-sm sm:text-base">Here are a couple of scripts that I particularly enjoyed writing:</p>
+                <ol className="list-decimal pl-4 sm:pl-5 space-y-1 sm:space-y-2">
                   <li>
                     <a 
                       href="https://www.instagram.com/reel/C1-9qyuOWy1/" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-orange-400 hover:underline"
+                      className="text-orange-400 hover:underline text-sm sm:text-base"
                     >
                       Instacart
                     </a>
@@ -308,13 +308,13 @@ export default function PersonalWebsiteComponent() {
                       href="https://www.instagram.com/reel/C1-9qyuOWy1/" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-orange-400 hover:underline"
+                      className="text-orange-400 hover:underline text-sm sm:text-base"
                     >
                       Heygen Avatars
                     </a>
                   </li>
                 </ol>
-                <p>Fun fact: Both the audio and video in these projects are fully AI-generated—no human involvement at all!</p>
+                <p className="text-sm sm:text-base">Fun fact: Both the audio and video in these projects are fully AI-generated—no human involvement at all!</p>
               </div>
             </DialogContent>
           </Dialog>
