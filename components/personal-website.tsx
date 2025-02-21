@@ -290,7 +290,7 @@ export default function PersonalWebsiteComponent() {
                     className="rounded-xl object-cover"
                   />
                 </div>
-                <p>I've been working with pages like Terminal and 5aitec, focusing on short-form, tech-related scripts. While the process is still ongoing to achieve visible channel transformation, I genuinely enjoy creating this content.</p>
+                <p>I&apos;ve been working with pages like Terminal and 5aitec, focusing on short-form, tech-related scripts. While the process is still ongoing to achieve visible channel transformation, I genuinely enjoy creating this content.</p>
                 <p>Here are a couple of scripts that I particularly enjoyed writing:</p>
                 <ol className="list-decimal pl-5 space-y-2">
                   <li>
