@@ -179,7 +179,7 @@ export default function PersonalWebsiteComponent() {
               target="_blank" 
               rel="noopener noreferrer" 
               className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-            ><strong>writers' community</strong></a>—a casual space where marketers hang, talk, and jam on writing</li>
+            ><strong>writers&apos; community</strong></a>—a casual space where marketers hang, talk, and jam on writing</li>
               <li>building <a 
               href="https://hemingway.ink/landing" 
               target="_blank" 
@@ -276,17 +276,17 @@ export default function PersonalWebsiteComponent() {
                 <p>i joined flexiple full-time as a social media manager, handling three pages:</p>
                 
                 <ul className="list-disc pl-5 space-y-2 mt-3 mb-3">
-                  <li>the founder's personal page</li>
-                  <li>another cofounder's page</li>
+                  <li>the founder&apos;s personal page</li>
+                  <li>another cofounder&apos;s page</li>
                   <li>the main buildd brand page</li>
                 </ul>
                 
                 <p>in my time there:</p>
                 
                 <ul className="list-disc pl-5 space-y-2 mt-3 mb-3">
-                  <li>the founder's page 2x'ed</li>
-                  <li>the cofounder's page also doubled</li>
-                  <li>we grew buildd's page to 15k followers</li>
+                  <li>the founder&apos;s page 2x&apos;ed</li>
+                  <li>the cofounder&apos;s page also doubled</li>
+                  <li>we grew buildd&apos;s page to 15k followers</li>
                 </ul>
                 
                 <p>we did it all—tweets, threads, mind maps, partnerships, launches.</p>
@@ -564,7 +564,7 @@ export default function PersonalWebsiteComponent() {
               className="block p-4 sm:p-6 hover:bg-muted/50 transition-colors"
             >
               <CardTitle className="mb-2 hover:text-orange-400 transition-colors">Impact per unit time {'>'}{'>'}Impact</CardTitle>
-              <CardDescription>Why impact per unit time is a better metric for career growth than just "impact" alone—and why you should optimise for it, even if your boss or client doesn't.</CardDescription>
+              <CardDescription>Why impact per unit time is a better metric for career growth than just &quot;impact&quot; alone—and why you should optimise for it, even if your boss or client doesn&apos;t.</CardDescription>
             </a>
           </Card>
           <Card className="hover:shadow-lg transition-shadow duration-300">
