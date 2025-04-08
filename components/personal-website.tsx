@@ -140,7 +140,7 @@ export default function PersonalWebsiteComponent() {
         <Card className="hover:shadow-lg transition-shadow duration-300">
           <CardHeader className="space-y-2 sm:space-y-0">
             <div className="flex flex-row justify-between items-center">
-              <CardTitle>Currently</CardTitle>
+              <CardTitle>Summary</CardTitle>
               <Button variant="link" className="text-sm hover:text-orange-400 transition-colors" asChild>
                 <a href="/past-roles">
                   see past roles
@@ -151,28 +151,50 @@ export default function PersonalWebsiteComponent() {
           </CardHeader>
           <CardContent className="space-y-4 text-muted-foreground">
             <p>
-              I am currently looking for roles that will keep me close to tech teams and allow me to do marketing for them. Think technical writing, social and content marketing for tech companies, mainly in AI, health, No-code and the like.
+              I write and market for tech-forward companies, especially in <strong>AI</strong>, <strong>health</strong>, and <strong>no-code</strong>, with a focus on breaking down technical ideas through content and storytelling.
             </p>
-            <p>
-              I also consult for {' '}
-              <a 
-                href="https://youtubeasaservice.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-              >
-                YaaS
-              </a>, writing short-form and long-form video scripts for one of their clients,{' '}
-              <a 
-                href="https://www.instagram.com/builders.central/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-              >
-                Builders Central
-              </a>{' '}
-              (Zoho Creator).
-            </p>
+            
+            <p><strong>Currently:</strong></p>
+            
+            <ul className="list-disc pl-5 space-y-2 mt-3">
+              <li>writing short-form & long-form video scripts for <a 
+              href="https://www.instagram.com/builders.central?igsh=cXNmM3l5MzhocG5o" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
+            ><strong>Builders Central</strong></a> (Zoho Creator) via <a 
+              href="https://youtubeasaservice.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
+            >YaaS</a></li>
+              <li>writing science-backed fitness videos for <a 
+              href="https://www.instagram.com/aroleap?igsh=M3AxdWsxZXNyOXJt" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
+            ><strong>Aroleap</strong></a>; a shark-tank backed fitness brand</li>
+              <li>running a <a 
+              href="https://chat.whatsapp.com/GT73AXT2vhWBoxJjjDfeN7" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
+            ><strong>writers' community</strong></a>—a casual space where marketers hang, talk, and jam on writing</li>
+              <li>building <a 
+              href="https://hemingway.ink/landing" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
+            ><strong>Hemingway</strong></a>, a product to make content writing easier and faster</li>
+              <li>running <strong>FBI</strong> (Farcaster Builders International), an onchain community and talent layer for <a 
+              href="https://www.base.org" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
+            ><strong>Base</strong></a></li>
+            </ul>
+            
+            <p>Always jamming with founders, shipping content on X, and spending time on the mat as a jiu-jitsu noob.</p>
           </CardContent>
         </Card>
       </header>
@@ -202,7 +224,7 @@ export default function PersonalWebsiteComponent() {
                       />
                     </div>
                     <div className="flex-1">
-                      <CardTitle className="mb-2">Builders Central: 0 to 100k</CardTitle>
+                      <CardTitle className="mb-2">Builders Central: 0 to 150k</CardTitle>
                       <CardDescription>Video content marketing case study</CardDescription>
                       <ExternalLink className="mt-4 text-muted-foreground" size={20} />
                     </div>
@@ -212,11 +234,14 @@ export default function PersonalWebsiteComponent() {
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>Builders Central: 0 to 100k</DialogTitle>
+                <DialogTitle>Builders Central: 0 to 150k</DialogTitle>
               </DialogHeader>
               <div className="space-y-4">
-                <p>I joined them as a consultant in November 2023. They had around 3.5K followers. So, we got to work. Short form content. Long form content. Giveaways. Contests.</p>
-                <p>You name it, we did it. And guess what? By November 2024, we crossed 100k followers.</p>
+                <p>i joined them as a consultant in november 2023, when they had around 3.5k followers.</p>
+                
+                <p>we got to work—short-form content, long-form posts, giveaways, contests. you name it, we tried it.</p>
+                
+                <p>and by april 2025, we had crossed 150k followers.</p>
               </div>
             </DialogContent>
           </Dialog>
@@ -248,8 +273,25 @@ export default function PersonalWebsiteComponent() {
                 <DialogTitle>Karthik Sridharan: 45 to 90k</DialogTitle>
               </DialogHeader>
               <div className="space-y-4">
-                <p>I joined as a full-time employee as social media manager. Managing 3 pages at Flexiple. The founder&apos;s page. Another cofounder&apos;s page. And buildd&apos;s page. The founder&apos;s page went 2x. The other cofounder&apos;s page also doubled. And buildd&apos;s page? We grew it to 15k.</p>
-                <p>We did it all. Tweets. Threads. Mind maps. Partnerships. Launches. It was fun. And it was rewarding. Seeing those numbers climb.</p>
+                <p>i joined flexiple full-time as a social media manager, handling three pages:</p>
+                
+                <ul className="list-disc pl-5 space-y-2 mt-3 mb-3">
+                  <li>the founder's personal page</li>
+                  <li>another cofounder's page</li>
+                  <li>the main buildd brand page</li>
+                </ul>
+                
+                <p>in my time there:</p>
+                
+                <ul className="list-disc pl-5 space-y-2 mt-3 mb-3">
+                  <li>the founder's page 2x'ed</li>
+                  <li>the cofounder's page also doubled</li>
+                  <li>we grew buildd's page to 15k followers</li>
+                </ul>
+                
+                <p>we did it all—tweets, threads, mind maps, partnerships, launches.</p>
+                
+                <p>it was fun, and more importantly, it was rewarding to see those numbers climb.</p>
               </div>
             </DialogContent>
           </Dialog>
@@ -514,7 +556,29 @@ export default function PersonalWebsiteComponent() {
           </Button>
         </div>
         <div className="space-y-6">
-        <Card className="hover:shadow-lg transition-shadow duration-300">
+          <Card className="hover:shadow-lg transition-shadow duration-300">
+            <a 
+              href="https://open.substack.com/pub/tushaarmehtaa/p/march-2025?r=oh6t0&utm_campaign=post&utm_medium=web&showWelcomeOnShare=false" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="block p-4 sm:p-6 hover:bg-muted/50 transition-colors"
+            >
+              <CardTitle className="mb-2 hover:text-orange-400 transition-colors">Impact per unit time {'>'}{'>'}Impact</CardTitle>
+              <CardDescription>Why impact per unit time is a better metric for career growth than just "impact" alone—and why you should optimise for it, even if your boss or client doesn't.</CardDescription>
+            </a>
+          </Card>
+          <Card className="hover:shadow-lg transition-shadow duration-300">
+            <a 
+              href="https://tushaarmehtaa.substack.com/p/february-2025?r=oh6t0" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="block p-4 sm:p-6 hover:bg-muted/50 transition-colors"
+            >
+              <CardTitle className="mb-2 hover:text-orange-400 transition-colors">Thinking about emergency funds for all of us 20-something ambitious kids</CardTitle>
+              <CardDescription>A quick February recap, plus a breakdown of what to actually do when you hit a career emergency—how to think about it, plan for it, and bounce back without panic.</CardDescription>
+            </a>
+          </Card>
+          <Card className="hover:shadow-lg transition-shadow duration-300">
             <a 
               href="https://tushaarmehtaa.substack.com/p/do-not-look-for-goals-look-for-a" 
               target="_blank" 
@@ -534,28 +598,6 @@ export default function PersonalWebsiteComponent() {
             >
               <CardTitle className="mb-2 hover:text-orange-400 transition-colors">The best thing that ever happened to me</CardTitle>
               <CardDescription>Exploring the role of sports in my life</CardDescription>
-            </a>
-          </Card>
-          <Card className="hover:shadow-lg transition-shadow duration-300">
-            <a 
-              href="https://tushaarmehtaa.substack.com/p/04-being-busy?r=oh6t0" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="block p-4 sm:p-6 hover:bg-muted/50 transition-colors"
-            >
-              <CardTitle className="mb-2 hover:text-orange-400 transition-colors">Being busy</CardTitle>
-              <CardDescription>Thoughts on being actually busy and pretending to be busy</CardDescription>
-            </a>
-          </Card>
-          <Card className="hover:shadow-lg transition-shadow duration-300">
-            <a 
-              href="https://tushaarmehtaa.substack.com/p/03-thinking-about-luck?r=oh6t0" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="block p-4 sm:p-6 hover:bg-muted/50 transition-colors"
-            >
-              <CardTitle className="mb-2 hover:text-orange-400 transition-colors">Thinking about luck</CardTitle>
-              <CardDescription>Wrote about how luck is multiplier to everything we do in life</CardDescription>
             </a>
           </Card>
         </div>
