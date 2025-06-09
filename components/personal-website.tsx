@@ -506,7 +506,7 @@ export default function PersonalWebsiteComponent() {
           {/* New Article - May 1 */}
           <div className="flex justify-between items-center">
             <a href="https://substack.com/@tushaarmehtaa/p-160136954" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-foreground hover:text-orange-400 hover:underline transition-colors">
-              you're not meant to follow a path.
+              you&apos;re not meant to follow a path.
             </a>
             <span className="text-sm text-muted-foreground whitespace-nowrap">01.05.2025</span>
           </div>
