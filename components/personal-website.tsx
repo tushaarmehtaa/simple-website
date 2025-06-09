@@ -8,6 +8,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, Dialog
 import { useTheme } from "next-themes"
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
 export default function PersonalWebsiteComponent() {
   const { theme, setTheme } = useTheme()
@@ -44,72 +45,6 @@ export default function PersonalWebsiteComponent() {
           </Button>
         </div>
 
-        <motion.div 
-          className="flex flex-wrap gap-2 sm:gap-4 mb-8"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <Button variant="ghost" size="icon" asChild>
-            <a 
-              href="https://x.com/tushaarmehtaa" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Twitter profile"
-              className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-            >
-              <Twitter className="h-5 w-5" />
-            </a>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <a 
-              href="https://github.com/tushaarmehtaa" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="GitHub profile"
-              className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-            >
-              <Github className="h-5 w-5" />
-            </a>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <a 
-              href="https://tarry-muscle-429.notion.site/Tushar-s-Writing-Portfolio-13e9c6707d96808f9ccfdc1c481b33c4" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Writing Portfolio"
-              className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-            >
-              <Pen className="h-5 w-5" />
-            </a>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <a 
-              href="mailto:tusharmehta2001@icloud.com" 
-              aria-label="Email me"
-              className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-            >
-              <Mail className="h-5 w-5" />
-            </a>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <a 
-              href="https://tushaarmehtaa.substack.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Newsletter"
-              className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-            >
-              <svg 
-                viewBox="0 0 24 24" 
-                className="h-5 w-5" 
-                fill="currentColor"
-              >
-                <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
-              </svg>
-            </a>
-          </Button>
-        </motion.div>
 
         <motion.p 
           className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8 space-y-4"
@@ -460,6 +395,21 @@ export default function PersonalWebsiteComponent() {
               </div>
             </div>
           </Card>
+
+          <Card className="hover:shadow-lg transition-shadow duration-300 aspect-square min-w-[150px]">
+            <div className="relative h-full">
+              <Image
+                src="/events/windsurf.png.png"
+                alt="Windsurf Speed Build Event at Antler Residency"
+                fill
+                className="object-cover rounded-lg"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent h-1/3 text-white rounded-b-lg">
+                <h3 className="font-semibold mb-1 text-sm sm:text-base">Windsurf Speed Build Event</h3>
+                <p className="text-xs sm:text-sm text-gray-200">at Antler Residency</p>
+              </div>
+            </div>
+          </Card>
         </div>
       </section>
 
@@ -468,83 +418,73 @@ export default function PersonalWebsiteComponent() {
           <h2 className="text-xl sm:text-2xl font-semibold">Projects</h2>
         </div>
         <div className="mb-6">
-          <p className="text-muted-foreground">I have recently been trying to learn to code with AI and have built a couple of projects:</p>
+          <p className="text-muted-foreground">I have recently been trying to learn to code with AI and have built a bunch of projects:</p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4">
-          <Card className="hover:shadow-lg transition-shadow duration-300 min-w-[150px]">
-            <a 
-              href="https://hemingway.fly.dev/landing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block h-full"
-            >
-              <div className="aspect-square w-full relative">
-                <Image
-                  src="/hemingway-preview.jpg"
-                  alt="HemingwayAI Preview"
-                  fill
-                  className="object-cover rounded-t-lg"
-                />
-              </div>
-              <div className="p-2 sm:p-4">
-                <CardTitle className="mb-1 sm:mb-2 text-sm sm:text-base hover:text-orange-400 transition-colors">HemingwayAI</CardTitle>
-                <CardDescription className="text-xs sm:text-sm text-muted-foreground">A tool that allows marketers to clone themselves to save (a lot of) time writing.</CardDescription>
-                <div className="mt-2 sm:mt-4 flex items-center text-muted-foreground">
-                  <ExternalLink size={16} className="sm:w-5 sm:h-5" />
-                </div>
-              </div>
-            </a>
-          </Card>
-          
-          <Card className="hover:shadow-lg transition-shadow duration-300 min-w-[150px]">
-            <a 
-              href="https://post-generator-seven.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block h-full"
-            >
-              <div className="aspect-square w-full relative">
-                <Image
-                  src="/post-generator-preview.jpg"
-                  alt="Post Generator Preview"
-                  fill
-                  className="object-cover rounded-t-lg"
-                />
-              </div>
-              <div className="p-2 sm:p-4">
-                <CardTitle className="mb-1 sm:mb-2 text-sm sm:text-base hover:text-orange-400 transition-colors">Post Generator</CardTitle>
-                <CardDescription className="text-xs sm:text-sm text-muted-foreground">Mix and match any template or working social post with your original thought. You&apos;ll get a post that&apos;s yours, but already socially accepted.</CardDescription>
-                <div className="mt-2 sm:mt-4 flex items-center text-muted-foreground">
-                  <ExternalLink size={16} className="sm:w-5 sm:h-5" />
-                </div>
-              </div>
-            </a>
-          </Card>
-          
-          <Card className="hover:shadow-lg transition-shadow duration-300 min-w-[150px]">
-            <a 
-              href="https://ai-scriptwriter.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block h-full"
-            >
-              <div className="aspect-square w-full relative">
-                <Image
-                  src="/script-writer-preview.jpg"
-                  alt="AI Script Writer Preview"
-                  fill
-                  className="object-cover rounded-t-lg object-top"
-                />
-              </div>
-              <div className="p-2 sm:p-4">
-                <CardTitle className="mb-1 sm:mb-2 text-sm sm:text-base hover:text-orange-400 transition-colors">AI Script Writer</CardTitle>
-                <CardDescription className="text-xs sm:text-sm text-muted-foreground">An app that asked me what I wanted to write about, what kind of hook to use, and what to research, and gave me a reel in 15 seconds that took hours to write manually.</CardDescription>
-                <div className="mt-2 sm:mt-4 flex items-center text-muted-foreground">
-                  <ExternalLink size={16} className="sm:w-5 sm:h-5" />
-                </div>
-              </div>
-            </a>
-          </Card>
+        <div className="space-y-6">
+          {/* Project 1: HemingwayAI */}
+          <div className="flex items-start space-x-4 group">
+            <Image 
+              src="/projects/hemingway.png" 
+              alt="HemingwayAI Logo" 
+              width={40} 
+              height={40} 
+              className="object-contain flex-shrink-0"
+            />
+            <div>
+              <a href="https://hemingway.ink/" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-foreground hover:text-orange-400 transition-colors group-hover:underline">
+                HemingwayAI <ExternalLink className="inline-block w-4 h-4 ml-1 opacity-75 group-hover:opacity-100" />
+              </a>
+              <p className="text-sm text-muted-foreground mt-1">AI tool for marketers to clone their writing style.</p>
+            </div>
+          </div>
+          {/* Project 2: Post Generator */}
+          <div className="flex items-start space-x-4 group">
+            <Image 
+              src="/projects/postgenerator.png" 
+              alt="Post Generator Logo" 
+              width={40} 
+              height={40} 
+              className="object-contain flex-shrink-0"
+            />
+            <div>
+              <a href="https://post-generator-seven.vercel.app" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-foreground hover:text-orange-400 transition-colors group-hover:underline">
+                Post Generator <ExternalLink className="inline-block w-4 h-4 ml-1 opacity-75 group-hover:opacity-100" />
+              </a>
+              <p className="text-sm text-muted-foreground mt-1">Generate social posts by mixing socially accepted templates with original thought.</p>
+            </div>
+          </div>
+          {/* Project 3: AI Script Writer */}
+          <div className="flex items-start space-x-4 group">
+            <Image 
+              src="/projects/scriptwriter.png" 
+              alt="AI Script Writer Logo" 
+              width={40} 
+              height={40} 
+              className="object-contain flex-shrink-0"
+            />
+            <div>
+              <a href="https://ai-scriptwriter.vercel.app" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-foreground hover:text-orange-400 transition-colors group-hover:underline">
+                AI Script Writer <ExternalLink className="inline-block w-4 h-4 ml-1 opacity-75 group-hover:opacity-100" />
+              </a>
+              <p className="text-sm text-muted-foreground mt-1">Create video scripts in seconds from topics and research.</p>
+            </div>
+          </div>
+          {/* Project 4: FBI website */}
+          <div className="flex items-start space-x-4 group">
+            <Image 
+              src="/projects/FBI 1.png" 
+              alt="FBI Website Logo" 
+              width={40} 
+              height={40} 
+              className="object-contain flex-shrink-0"
+            />
+            <div>
+              <a href="https://your-fbi-project-link.com" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-foreground hover:text-orange-400 transition-colors group-hover:underline">
+                FBI website <ExternalLink className="inline-block w-4 h-4 ml-1 opacity-75 group-hover:opacity-100" />
+              </a>
+              <p className="text-sm text-muted-foreground mt-1">Full-stack website with builder directory for FBI.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -555,51 +495,49 @@ export default function PersonalWebsiteComponent() {
             <a href="https://tushaarmehtaa.substack.com/" target="_blank" rel="noopener noreferrer" className="hover:text-orange-400 transition-colors">check out my newsletter</a>
           </Button>
         </div>
-        <div className="space-y-6">
-          <Card className="hover:shadow-lg transition-shadow duration-300">
-            <a 
-              href="https://open.substack.com/pub/tushaarmehtaa/p/march-2025?r=oh6t0&utm_campaign=post&utm_medium=web&showWelcomeOnShare=false" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="block p-4 sm:p-6 hover:bg-muted/50 transition-colors"
-            >
-              <CardTitle className="mb-2 hover:text-orange-400 transition-colors">Impact per unit time {'>'}{'>'}Impact</CardTitle>
-              <CardDescription>Why impact per unit time is a better metric for career growth than just &quot;impact&quot; alone—and why you should optimise for it, even if your boss or client doesn&apos;t.</CardDescription>
+        <div className="space-y-4">
+          {/* New Article - May 31 */}
+          <div className="flex justify-between items-center">
+            <a href="https://tushaarmehtaa.substack.com/p/i-thought-i-was-too-good-for-small" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-foreground hover:text-orange-400 hover:underline transition-colors">
+              I thought I was too good for small wins
             </a>
-          </Card>
-          <Card className="hover:shadow-lg transition-shadow duration-300">
-            <a 
-              href="https://tushaarmehtaa.substack.com/p/february-2025?r=oh6t0" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="block p-4 sm:p-6 hover:bg-muted/50 transition-colors"
-            >
-              <CardTitle className="mb-2 hover:text-orange-400 transition-colors">Thinking about emergency funds for all of us 20-something ambitious kids</CardTitle>
-              <CardDescription>A quick February recap, plus a breakdown of what to actually do when you hit a career emergency—how to think about it, plan for it, and bounce back without panic.</CardDescription>
+            <span className="text-sm text-muted-foreground whitespace-nowrap">31.05.2025</span>
+          </div>
+          {/* New Article - May 1 */}
+          <div className="flex justify-between items-center">
+            <a href="https://substack.com/@tushaarmehtaa/p-160136954" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-foreground hover:text-orange-400 hover:underline transition-colors">
+              you're not meant to follow a path.
             </a>
-          </Card>
-          <Card className="hover:shadow-lg transition-shadow duration-300">
-            <a 
-              href="https://tushaarmehtaa.substack.com/p/do-not-look-for-goals-look-for-a" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="block p-4 sm:p-6 hover:bg-muted/50 transition-colors"
-            >
-              <CardTitle className="mb-2 hover:text-orange-400 transition-colors">Do not look for goals, look for a way of life.</CardTitle>
-              <CardDescription>Just recapping my January with things I recently read</CardDescription>
+            <span className="text-sm text-muted-foreground whitespace-nowrap">01.05.2025</span>
+          </div>
+          {/* Article 1 */}
+          <div className="flex justify-between items-center">
+            <a href="https://open.substack.com/pub/tushaarmehtaa/p/march-2025?r=oh6t0&utm_campaign=post&utm_medium=web&showWelcomeOnShare=false" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-foreground hover:text-orange-400 hover:underline transition-colors">
+              Impact per unit time {'>'}{'>'}Impact
             </a>
-          </Card>
-          <Card className="hover:shadow-lg transition-shadow duration-300">
-            <a 
-              href="https://tushaarmehtaa.substack.com/p/the-best-thing-that-ever-happened?r=oh6t0" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="block p-4 sm:p-6 hover:bg-muted/50 transition-colors"
-            >
-              <CardTitle className="mb-2 hover:text-orange-400 transition-colors">The best thing that ever happened to me</CardTitle>
-              <CardDescription>Exploring the role of sports in my life</CardDescription>
+            <span className="text-sm text-muted-foreground whitespace-nowrap">29.03.2025</span>
+          </div>
+          {/* Article 2 */}
+          <div className="flex justify-between items-center">
+            <a href="https://tushaarmehtaa.substack.com/p/february-2025?r=oh6t0" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-foreground hover:text-orange-400 hover:underline transition-colors">
+              Thinking about emergency funds for all of us 20-something ambitious kids
             </a>
-          </Card>
+            <span className="text-sm text-muted-foreground whitespace-nowrap">01.03.2025</span>
+          </div>
+          {/* Article 3 */}
+          <div className="flex justify-between items-center">
+            <a href="https://tushaarmehtaa.substack.com/p/do-not-look-for-goals-look-for-a" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-foreground hover:text-orange-400 hover:underline transition-colors">
+              Do not look for goals, look for a way of life.
+            </a>
+            <span className="text-sm text-muted-foreground whitespace-nowrap">28.02.2025</span>
+          </div>
+          {/* Article 4 */}
+          <div className="flex justify-between items-center">
+            <a href="https://tushaarmehtaa.substack.com/p/the-best-thing-that-ever-happened?r=oh6t0" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-foreground hover:text-orange-400 hover:underline transition-colors">
+              The best thing that ever happened to me
+            </a>
+            <span className="text-sm text-muted-foreground whitespace-nowrap">18.11.2025</span>
+          </div>
         </div>
       </section>
 
@@ -652,6 +590,70 @@ export default function PersonalWebsiteComponent() {
 
       <footer className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t">
         <div className="flex justify-center space-x-4">
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="ghost" size="icon" asChild>
+                  <a href="https://x.com/tushaarmehtaa" target="_blank" rel="noopener noreferrer" aria-label="Twitter profile" className="hover:text-orange-400 transition-colors">
+                    <Twitter className="h-5 w-5" />
+                  </a>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Follow me on X</p>
+              </TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="ghost" size="icon" asChild>
+                  <a href="https://github.com/tushaarmehtaa" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" className="hover:text-orange-400 transition-colors">
+                    <Github className="h-5 w-5" />
+                  </a>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Coding</p>
+              </TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="ghost" size="icon" asChild>
+                  <a href="https://tarry-muscle-429.notion.site/Tushar-s-Writing-Portfolio-13e9c6707d96808f9ccfdc1c481b33c4" target="_blank" rel="noopener noreferrer" aria-label="Writing Portfolio" className="hover:text-orange-400 transition-colors">
+                    <Pen className="h-5 w-5" />
+                  </a>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Checkout my writing portfolio</p>
+              </TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="ghost" size="icon" asChild>
+                  <a href="mailto:tusharmehta2001@icloud.com" aria-label="Email me" className="hover:text-orange-400 transition-colors">
+                    <Mail className="h-5 w-5" />
+                  </a>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Write an email to me</p>
+              </TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="ghost" size="icon" asChild>
+                  <a href="https://tushaarmehtaa.substack.com" target="_blank" rel="noopener noreferrer" aria-label="Newsletter" className="hover:text-orange-400 transition-colors">
+                    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
+                      <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
+                    </svg>
+                  </a>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Checkout my thoughts</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
           <Button
             variant="ghost"
             size="icon"
