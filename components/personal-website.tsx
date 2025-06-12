@@ -3,12 +3,13 @@
 import * as React from 'react'
 import { Github, Twitter, Pen, Mail, ExternalLink, ArrowRight, Moon, Sun } from 'lucide-react'
 import { Button } from "@/components/ui/button"
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog"
+import { Card, CardTitle, CardContent, CardDescription } from "@/components/ui/card"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { useTheme } from "next-themes"
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { workItems, WorkItem } from '../data/work-items';
 
 export default function PersonalWebsiteComponent() {
   const { theme, setTheme } = useTheme()
@@ -45,93 +46,48 @@ export default function PersonalWebsiteComponent() {
           </Button>
         </div>
 
-
-        <motion.p 
-          className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8 space-y-4"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <span className="block">Hello Hello! I&apos;m Tushaar, and this is my little corner of the world wide web.</span>
-          
-          <span className="block">I&apos;m a genuinely curious, internet kid, using this space to share and explain what I do.</span>
-        </motion.p>
-
-        <motion.div
-          className="w-full h-[250px] sm:h-[350px] md:h-[400px] relative mb-8 sm:mb-12 rounded-xl sm:rounded-2xl overflow-hidden"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          <Image
-            src="/profile.jpg"
-            alt="Tushar Mehta"
-            fill
-            className="object-cover"
-            priority
-          />
-        </motion.div>
-
-        <Card className="hover:shadow-lg transition-shadow duration-300">
-          <CardHeader className="space-y-2 sm:space-y-0">
-            <div className="flex flex-row justify-between items-center">
-              <CardTitle>Summary</CardTitle>
-              <Button variant="link" className="text-sm hover:text-orange-400 transition-colors" asChild>
-                <a href="/past-roles">
-                  see past roles
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-            </div>
-          </CardHeader>
-          <CardContent className="space-y-4 text-muted-foreground">
-            <p>
-              I write and market for tech-forward companies, especially in <strong>AI</strong>, <strong>health</strong>, and <strong>no-code</strong>, with a focus on breaking down technical ideas through content and storytelling.
+        <div className="flex flex-col md:flex-row items-start gap-8 mb-8 sm:mb-12">
+          {/* Left Column: Text */}
+          <motion.div 
+            className="md:w-3/5 w-full space-y-4"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {/* 'About Me' heading removed */}
+            <p className="text-sm sm:text-base text-muted-foreground leading-normal">
+              Hey, I’m Tushaar, a writer, operator, and a startup generalist. For the past ~4 years, I’ve worked with early-stage startups like OWLED Media, Dezerv, and Nintee, mostly across content, marketing, and community.
             </p>
-            
-            <p><strong>Currently:</strong></p>
-            
-            <ul className="list-disc pl-5 space-y-2 mt-3">
-              <li>writing short-form & long-form video scripts for <a 
-              href="https://www.instagram.com/builders.central?igsh=cXNmM3l5MzhocG5o" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-            ><strong>Builders Central</strong></a> (Zoho Creator) via <a 
-              href="https://youtubeasaservice.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-            >YaaS</a></li>
-              <li>writing science-backed fitness videos for <a 
-              href="https://www.instagram.com/aroleap?igsh=M3AxdWsxZXNyOXJt" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-            ><strong>Aroleap</strong></a>; a shark-tank backed fitness brand</li>
-              <li>running a <a 
-              href="https://chat.whatsapp.com/GT73AXT2vhWBoxJjjDfeN7" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-            ><strong>writers&apos; community</strong></a>—a casual space where marketers hang, talk, and jam on writing</li>
-              <li>building <a 
-              href="https://hemingway.ink/landing" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-            ><strong>Hemingway</strong></a>, a product to make content writing easier and faster</li>
-              <li>running <strong>FBI</strong> (Farcaster Builders International), an onchain community and talent layer for <a 
-              href="https://www.base.org" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-            ><strong>Base</strong></a></li>
+            <h3 className="text-lg sm:text-xl font-semibold text-foreground">What I’m Doing Right Now:</h3>
+            <ul className="list-disc list-inside space-y-1 text-sm sm:text-base text-muted-foreground leading-normal">
+              <li>Writing scripts (both short-form & long-form) for <a href="https://www.instagram.com/builders.central?igsh=cXNmM3l5MzhocG5o" target="_blank" rel="noopener noreferrer" className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors">Builders Central</a> (Zoho Creator) via <a href="https://youtubeasaservice.com" target="_blank" rel="noopener noreferrer" className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors">YaaS</a></li>
+              <li>Consulting and helping in creative direction and scripting videos for <a href="https://www.instagram.com/aroleap?igsh=M3AxdWsxZXNyOXJt" target="_blank" rel="noopener noreferrer" className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors">Aroleap</a>, a Shark Tank and Rainmatter–backed fitness brand</li>
+              <li>Running a casual <a href="https://chat.whatsapp.com/GT73AXT2vhWBoxJjjDfeN7" target="_blank" rel="noopener noreferrer" className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors">writers&apos; community</a> for marketers and creators</li>
+              <li>Wrapping up my time building FBI (Farcaster Builders International) — talent layer + an onchain dev community for <a href="https://www.base.org" target="_blank" rel="noopener noreferrer" className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors">Base</a></li>
             </ul>
-            
-            <p>Always jamming with founders, shipping content on X, and spending time on the mat as a jiu-jitsu noob.</p>
-          </CardContent>
-        </Card>
+            <p className="text-sm sm:text-base text-foreground font-semibold leading-normal">
+              Now, I’m looking to go deeper and join a high-agency team to help build something people want.
+            </p>
+          </motion.div>
+
+          {/* Right Column: Image */}
+          <motion.div
+            className="md:w-2/5 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <Image
+              src="/profile.jpg"
+              alt="Tushar Mehta"
+              fill
+              className="object-cover object-[83%_center]"
+              priority
+            />
+          </motion.div>
+        </div>
+
+        {/* Summary Card Removed */}
       </header>
 
       <section className="mb-12 sm:mb-16">
@@ -145,156 +101,57 @@ export default function PersonalWebsiteComponent() {
           </Button>
         </div>
         <div className="space-y-6">
-          <Dialog>
-            <DialogTrigger asChild>
-              <Card className="hover:shadow-lg transition-shadow duration-300 cursor-pointer">
-                <div className="p-4 sm:p-6 hover:bg-muted/50 transition-colors">
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                    <div className="w-full sm:w-1/3 aspect-video relative">
-                      <Image 
-                        src="/builders-central.png" 
-                        alt="Builders Central thumbnail" 
-                        fill
-                        className="rounded-md sm:rounded-xl object-cover"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <CardTitle className="mb-2">Builders Central: 0 to 150k</CardTitle>
-                      <CardDescription>Video content marketing case study</CardDescription>
-                      <ExternalLink className="mt-4 text-muted-foreground" size={20} />
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Builders Central: 0 to 150k</DialogTitle>
-              </DialogHeader>
-              <div className="space-y-4">
-                <p>i joined them as a consultant in november 2023, when they had around 3.5k followers.</p>
-                
-                <p>we got to work—short-form content, long-form posts, giveaways, contests. you name it, we tried it.</p>
-                
-                <p>and by april 2025, we had crossed 150k followers.</p>
-              </div>
-            </DialogContent>
-          </Dialog>
-
-          <Dialog>
-            <DialogTrigger asChild>
-              <Card className="hover:shadow-lg transition-shadow duration-300 cursor-pointer">
-                <div className="p-4 sm:p-6 hover:bg-muted/50 transition-colors">
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                    <div className="w-full sm:w-1/3 aspect-video relative">
-                      <Image 
-                        src="/karthik-sridharan.png" 
-                        alt="Karthik Sridharan thumbnail" 
-                        fill
-                        className="rounded-md sm:rounded-xl object-cover"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <CardTitle className="mb-2">Karthik Sridharan: 45 to 90k</CardTitle>
-                      <CardDescription>Founder personal brand case study</CardDescription>
-                      <ExternalLink className="mt-4 text-muted-foreground" size={20} />
+          {workItems.filter(item => item.id === 'builders-central' || item.id === 'karthik-sridharan' || item.id === 'aroleap').map((item: WorkItem) => (
+            <Dialog key={item.id}>
+              <DialogTrigger asChild>
+                <Card className="hover:shadow-lg transition-shadow duration-300 cursor-pointer">
+                  <div className="p-4 sm:p-6 hover:bg-muted/50 transition-colors">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                      <div className="w-full sm:w-1/3 aspect-video relative">
+                        <Image 
+                          src={item.imageSrc}
+                          alt={item.imageAlt} 
+                          fill
+                          className="rounded-md sm:rounded-xl object-cover"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <CardTitle className="mb-2">{item.title}</CardTitle>
+                        <CardDescription>{item.cardDescription}</CardDescription>
+                        {/* Optional: Add external link icon if item.link exists */}
+                        {item.link && (
+                          <a href={item.link} target="_blank" rel="noopener noreferrer" className="mt-4 text-muted-foreground inline-block">
+                            <ExternalLink size={20} />
+                          </a>
+                        )}
+                        {!item.link && <ExternalLink className="mt-4 text-muted-foreground" size={20} />}
+                      </div>
                     </div>
                   </div>
+                </Card>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>{item.dialogTitle}</DialogTitle>
+                </DialogHeader>
+                <div className="space-y-4 text-sm sm:text-base text-muted-foreground leading-relaxed max-h-[60vh] overflow-y-auto pr-4">
+                  {item.dialogContent.lead && (
+                    <p className="font-semibold text-foreground">{item.dialogContent.lead}</p>
+                  )}
+                  {item.dialogContent.paragraphs.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                  {item.dialogContent.listItems && item.dialogContent.listItems.length > 0 && (
+                    <ul className="list-disc pl-5 space-y-1 my-2">
+                      {item.dialogContent.listItems.map((listItem, index) => (
+                        <li key={index}>{listItem}</li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
-              </Card>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Karthik Sridharan: 45 to 90k</DialogTitle>
-              </DialogHeader>
-              <div className="space-y-4">
-                <p>i joined flexiple full-time as a social media manager, handling three pages:</p>
-                
-                <ul className="list-disc pl-5 space-y-2 mt-3 mb-3">
-                  <li>the founder&apos;s personal page</li>
-                  <li>another cofounder&apos;s page</li>
-                  <li>the main buildd brand page</li>
-                </ul>
-                
-                <p>in my time there:</p>
-                
-                <ul className="list-disc pl-5 space-y-2 mt-3 mb-3">
-                  <li>the founder&apos;s page 2x&apos;ed</li>
-                  <li>the cofounder&apos;s page also doubled</li>
-                  <li>we grew buildd&apos;s page to 15k followers</li>
-                </ul>
-                
-                <p>we did it all—tweets, threads, mind maps, partnerships, launches.</p>
-                
-                <p>it was fun, and more importantly, it was rewarding to see those numbers climb.</p>
-              </div>
-            </DialogContent>
-          </Dialog>
-
-          <Dialog>
-            <DialogTrigger asChild>
-              <Card className="hover:shadow-lg transition-shadow duration-300 cursor-pointer">
-                <div className="p-4 sm:p-6 hover:bg-muted/50 transition-colors">
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                    <div className="w-full sm:w-1/3 aspect-video relative">
-                      <Image 
-                        src="/scriptwriting.png" 
-                        alt="More Scriptwriting Work" 
-                        fill
-                        className="rounded-md sm:rounded-xl object-cover"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <CardTitle className="mb-2">More Scriptwriting Work</CardTitle>
-                      <CardDescription>AI-generated content for tech channels</CardDescription>
-                      <ExternalLink className="mt-4 text-muted-foreground" size={20} />
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>More Scriptwriting Work</DialogTitle>
-                <DialogDescription>AI-generated content for tech channels</DialogDescription>
-              </DialogHeader>
-              <div className="space-y-3 sm:space-y-4">
-                <div className="aspect-video relative">
-                  <Image 
-                    src="/scriptwriting.png" 
-                    alt="Scriptwriting Work Preview" 
-                    fill
-                    className="rounded-xl object-cover"
-                  />
-                </div>
-                <p className="text-sm sm:text-base">I&apos;ve been working with pages like Terminal and 5aitec, focusing on short-form, tech-related scripts. While the process is still ongoing to achieve visible channel transformation, I genuinely enjoy creating this content.</p>
-                <p className="text-sm sm:text-base">Here are a couple of scripts that I particularly enjoyed writing:</p>
-                <ol className="list-decimal pl-4 sm:pl-5 space-y-1 sm:space-y-2">
-                  <li>
-                    <a 
-                      href="https://www.instagram.com/reel/C1-9qyuOWy1/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-orange-400 hover:underline text-sm sm:text-base"
-                    >
-                      Instacart
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="https://www.instagram.com/reel/C1-9qyuOWy1/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-orange-400 hover:underline text-sm sm:text-base"
-                    >
-                      Heygen Avatars
-                    </a>
-                  </li>
-                </ol>
-                <p className="text-sm sm:text-base">Fun fact: Both the audio and video in these projects are fully AI-generated—no human involvement at all!</p>
-              </div>
-            </DialogContent>
-          </Dialog>
+              </DialogContent>
+            </Dialog>
+          ))}
         </div>
       </section>
 
@@ -303,9 +160,9 @@ export default function PersonalWebsiteComponent() {
           <h2 className="text-xl sm:text-2xl font-semibold">Events</h2>
         </div>
         <div className="mb-6">
-          <p className="text-muted-foreground">I&apos;ve explored the IRL side of developer marketing by leading events for Base in India. Over the last 6 months, I&apos;ve built a really active builder collective on Base through organizing:</p>
+          <p className="text-muted-foreground">I spent most of 2024 and 2025 organising developer-focused events to drive top-of-funnel growth. To make this happen, I collaborated with developer-first companies such as Farcaster, Base, Coinbase and Windsurf.<br />Some of the events:</p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4">
           <Card className="hover:shadow-lg transition-shadow duration-300 aspect-square min-w-[150px]">
             <div className="relative h-full">
               <Image
@@ -314,9 +171,9 @@ export default function PersonalWebsiteComponent() {
                 fill
                 className="object-cover rounded-lg"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent h-1/3 text-white rounded-b-lg">
-                <h3 className="font-semibold mb-1 text-sm sm:text-base">Frames Hackathon</h3>
-                <p className="text-xs sm:text-sm text-gray-200">at Antler</p>
+              <div className="absolute bottom-0 left-0 right-0 p-1.5 bg-gradient-to-t from-black/80 via-black/30 to-transparent h-2/5 text-white rounded-b-lg flex flex-col justify-end items-center text-center">
+                <h3 className="font-semibold text-xs leading-tight">Frames Hackathon</h3>
+                <p className="text-[0.65rem] leading-tight text-gray-300">at Antler</p>
               </div>
             </div>
           </Card>
@@ -329,9 +186,9 @@ export default function PersonalWebsiteComponent() {
                 fill
                 className="object-cover rounded-lg"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent h-1/3 text-white rounded-b-lg">
-                <h3 className="font-semibold mb-1 text-sm sm:text-base">Base Meetup</h3>
-                <p className="text-xs sm:text-sm text-gray-200">at Zo House</p>
+              <div className="absolute bottom-0 left-0 right-0 p-1.5 bg-gradient-to-t from-black/80 via-black/30 to-transparent h-2/5 text-white rounded-b-lg flex flex-col justify-end items-center text-center">
+                <h3 className="font-semibold text-xs leading-tight">Base Meetup</h3>
+                <p className="text-[0.65rem] leading-tight text-gray-300">at Zo House</p>
               </div>
             </div>
           </Card>
@@ -344,9 +201,9 @@ export default function PersonalWebsiteComponent() {
                 fill
                 className="object-cover rounded-lg"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent h-1/3 text-white rounded-b-lg">
-                <h3 className="font-semibold mb-1 text-sm sm:text-base">Farcaster Friday</h3>
-                <p className="text-xs sm:text-sm text-gray-200">at Hashed Haus</p>
+              <div className="absolute bottom-0 left-0 right-0 p-1.5 bg-gradient-to-t from-black/80 via-black/30 to-transparent h-2/5 text-white rounded-b-lg flex flex-col justify-end items-center text-center">
+                <h3 className="font-semibold text-xs leading-tight">Farcaster Friday</h3>
+                <p className="text-[0.65rem] leading-tight text-gray-300">at Hashed Haus</p>
               </div>
             </div>
           </Card>
@@ -359,9 +216,9 @@ export default function PersonalWebsiteComponent() {
                 fill
                 className="object-cover rounded-lg"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent h-1/3 text-white rounded-b-lg">
-                <h3 className="font-semibold mb-1 text-sm sm:text-base">Base Buildathon</h3>
-                <p className="text-xs sm:text-sm text-gray-200">at Devfolio</p>
+              <div className="absolute bottom-0 left-0 right-0 p-1.5 bg-gradient-to-t from-black/80 via-black/30 to-transparent h-2/5 text-white rounded-b-lg flex flex-col justify-end items-center text-center">
+                <h3 className="font-semibold text-xs leading-tight">Base Buildathon</h3>
+                <p className="text-[0.65rem] leading-tight text-gray-300">at Devfolio</p>
               </div>
             </div>
           </Card>
@@ -374,9 +231,9 @@ export default function PersonalWebsiteComponent() {
                 fill
                 className="object-cover rounded-lg"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent h-1/3 text-white rounded-b-lg">
-                <h3 className="font-semibold mb-1 text-sm sm:text-base">20+ Base Events</h3>
-                <p className="text-xs sm:text-sm text-gray-200">During IBW and ETHIndia</p>
+              <div className="absolute bottom-0 left-0 right-0 p-1.5 bg-gradient-to-t from-black/80 via-black/30 to-transparent h-2/5 text-white rounded-b-lg flex flex-col justify-end items-center text-center">
+                <h3 className="font-semibold text-xs leading-tight">20+ Base Events</h3>
+                <p className="text-[0.65rem] leading-tight text-gray-300">During IBW and ETHIndia</p>
               </div>
             </div>
           </Card>
@@ -389,9 +246,9 @@ export default function PersonalWebsiteComponent() {
                 fill
                 className="object-cover rounded-lg"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent h-1/3 text-white rounded-b-lg">
-                <h3 className="font-semibold mb-1 text-sm sm:text-base">Base AI Hackathon</h3>
-                <p className="text-xs sm:text-sm text-gray-200">at Antler Residency</p>
+              <div className="absolute bottom-0 left-0 right-0 p-1.5 bg-gradient-to-t from-black/80 via-black/30 to-transparent h-2/5 text-white rounded-b-lg flex flex-col justify-end items-center text-center">
+                <h3 className="font-semibold text-xs leading-tight">Base AI Hackathon</h3>
+                <p className="text-[0.65rem] leading-tight text-gray-300">at Antler Residency</p>
               </div>
             </div>
           </Card>
@@ -404,9 +261,24 @@ export default function PersonalWebsiteComponent() {
                 fill
                 className="object-cover rounded-lg"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent h-1/3 text-white rounded-b-lg">
-                <h3 className="font-semibold mb-1 text-sm sm:text-base">Windsurf Speed Build Event</h3>
-                <p className="text-xs sm:text-sm text-gray-200">at Antler Residency</p>
+              <div className="absolute bottom-0 left-0 right-0 p-1.5 bg-gradient-to-t from-black/80 via-black/30 to-transparent h-2/5 text-white rounded-b-lg flex flex-col justify-end items-center text-center">
+                <h3 className="font-semibold text-xs leading-tight">Windsurf Speed Build Event</h3>
+                <p className="text-[0.65rem] leading-tight text-gray-300">at Antler Residency</p>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="hover:shadow-lg transition-shadow duration-300 aspect-square min-w-[150px]">
+            <div className="relative h-full">
+              <Image
+                src="/events/basedfellowship.png.png"
+                alt="Based Fellowship at Dharamshala"
+                fill
+                className="object-cover rounded-lg"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-1.5 bg-gradient-to-t from-black/80 via-black/30 to-transparent h-2/5 text-white rounded-b-lg flex flex-col justify-end items-center text-center">
+                <h3 className="font-semibold text-xs leading-tight">Based Fellowship</h3>
+                <p className="text-[0.65rem] leading-tight text-gray-300">@ Dharamshala</p>
               </div>
             </div>
           </Card>
@@ -415,10 +287,10 @@ export default function PersonalWebsiteComponent() {
 
       <section className="mb-12 sm:mb-16">
         <div className="flex flex-row justify-between items-center gap-4 mb-6">
-          <h2 className="text-xl sm:text-2xl font-semibold">Projects</h2>
+          <h2 className="text-xl sm:text-2xl font-semibold">Tinkering</h2>
         </div>
         <div className="mb-6">
-          <p className="text-muted-foreground">I have recently been trying to learn to code with AI and have built a bunch of projects:</p>
+          <p className="text-muted-foreground">I got tired of not being able to talk to devs in their language — so I learned enough code to ship my own small tools. All of these solve real problems I had while working:</p>
         </div>
         <div className="space-y-6">
           {/* Project 1: HemingwayAI */}
@@ -490,11 +362,12 @@ export default function PersonalWebsiteComponent() {
 
       <section className="mb-12 sm:mb-16">
         <div className="flex flex-row justify-between items-center gap-4 mb-6">
-          <h2 className="text-xl sm:text-2xl font-semibold">Writing</h2>
+          <h2 className="text-xl sm:text-2xl font-semibold">Thoughts</h2>
           <Button asChild className="shrink-0">
             <a href="https://tushaarmehtaa.substack.com/" target="_blank" rel="noopener noreferrer" className="hover:text-orange-400 transition-colors">check out my newsletter</a>
           </Button>
         </div>
+        <p className="text-muted-foreground mb-6">I also write a newsletter. Less advice, more lived experience.</p>
         <div className="space-y-4">
           {/* New Article - May 31 */}
           <div className="flex justify-between items-center">
@@ -542,48 +415,48 @@ export default function PersonalWebsiteComponent() {
       </section>
 
       <section className="mb-12 sm:mb-16">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">Connect</h2>
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">Say hello!</h2>
         <Card className="hover:shadow-lg transition-shadow duration-300">
           <CardContent className="pt-6">
-            <p className="text-muted-foreground mb-4">
-              I&apos;m always interested in connecting with other writers, startup operators and founders.
+            <p className="text-muted-foreground mb-6">
+              I’m always happy to chat with other writers, operators, or builders. Especially if you’re working at the intersection of tech, health, education, or sports.
             </p>
-
-            <p className="text-muted-foreground mb-4">
-              I love to talk about technology, physics, health, education and sports, so if you have something on your mind, my{' '}
-              <a 
-                href="https://x.com/tushaarmehtaa" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-              >
-                Twitter DMs
-              </a>{' '}
-              are always open.
-            </p>
-
-            <p className="text-muted-foreground mb-4">
-              Subscribe to my{' '}
-              <a 
-                href="https://tushaarmehtaa.substack.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-              >
-                newsletter
-              </a>{' '}
-              where I share everything I&apos;m learning.
-            </p>
-
-            <p className="text-muted-foreground">
-              Or just{' '}
-              <a 
-                href="mailto:tusharmehta2001@icloud.com"
-                className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
-              >
-                drop me an email
-              </a>
-            </p>
+            <ul className="list-disc pl-5 space-y-3 text-muted-foreground">
+              <li>
+                <a 
+                  href="https://x.com/tushaarmehtaa" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
+                >
+                  Twitter DMs
+                </a>{' '}
+                are open
+              </li>
+              <li>
+                You can also just{' '}
+                <a 
+                  href="mailto:tusharmehta2001@icloud.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
+                >
+                  drop me an email
+                </a>
+              </li>
+              <li>
+                Or{' '}
+                <a 
+                  href="https://tushaarmehtaa.substack.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="underline decoration-2 decoration-orange-400 hover:text-orange-400 transition-colors"
+                >
+                  subscribe to my newsletter
+                </a>{' '}
+                and follow the rabbit hole
+              </li>
+            </ul>
           </CardContent>
         </Card>
       </section>

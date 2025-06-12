@@ -7,56 +7,7 @@ import { ArrowLeft, ExternalLink, Github, Twitter, Mail, Pen, Moon, Sun } from '
 import { useTheme } from "next-themes"
 import Link from 'next/link'
 import Image from 'next/image'
-
-const featuredWork = [
-  {
-    title: "Builders Central: 0 to 100k",
-    description: "Video content marketing case study",
-    content: [
-      "I joined them as a consultant in November 2023. They had around 3.5K followers. So, we got to work. Short form content. Long form content. Giveaways. Contests.",
-      "You name it, we did it. And guess what? By November 2024, we crossed 100k followers."
-    ],
-    image: "/builders-central.png",
-    link: "https://www.instagram.com/builders.central/"
-  },
-  {
-    title: "Karthik Sridharan: 35k to 90k",
-    description: "Founder personal brand case study",
-    content: [
-      "I joined as a full-time employee as social media manager. Managing 3 pages at Flexiple. The founder's page. Another cofounder's page. And buildd's page. The founder's page went ~3x. The other cofounder's page also doubled. And buildd's page? We grew it to 15k.",
-      "We did it all. Tweets. Threads. Mind maps. Partnerships. Launches. It was fun. And it was rewarding. Seeing those numbers climb."
-    ],
-    image: "/karthik-sridharan.png",
-    link: "https://flexiple.com"
-  },
-  {
-    title: "More Scriptwriting Work",
-    description: "AI-generated content for tech channels",
-    content: [
-      "I've been working with pages like Terminal and 5aitec, focusing on short-form, tech-related scripts. While the process is still ongoing to achieve visible channel transformation, I genuinely enjoy creating this content.",
-      "Here are a couple of scripts that I particularly enjoyed writing:",
-      "1. [Instacart](https://www.instagram.com/reel/DAV3Xd0vNba/?igsh=MXUwazVpNDlpa2V4MA==)",
-      "2. [Heygen Avatars](https://www.instagram.com/reel/DBoYlRyMHp2/?igsh=MXQyYjZuMTZkOHBmZA==)",
-      "Fun fact: Both the audio and video in these projects are fully AI-generated—no human involvement at all!"
-    ],
-    image: "/scriptwriting.png",
-    link: "https://www.instagram.com/reel/DAV3Xd0vNba/?igsh=MXUwazVpNDlpa2V4MA=="
-  },
-  {
-    title: "Podcast Production for Ayush Wadhwa",
-    description: "End-to-end podcast management and growth",
-    content: [
-      "This was my first paid opportunity back in 2021. I managed end-to-end podcast production, including:",
-      "- Finding and reaching out to guests",
-      "- Coming up with interview questions",
-      "- Developing distribution strategies",
-      "- Collaborating with editors and designers for short-form content derived from the podcast",
-      "During my time, YouTube subscribers grew from 13K to 26K, and Instagram followers skyrocketed from 35K to 250K by the time I left in 2022."
-    ],
-    image: "/podcast-production.png",
-    link: "https://www.youtube.com/@ayushwadhwa"
-  }
-]
+import { workItems, WorkItem } from '../../data/work-items';
 
 export default function FeaturedWork() {
   const { theme, setTheme } = useTheme()
@@ -84,28 +35,29 @@ export default function FeaturedWork() {
       <h1 className="text-4xl font-bold mb-8">Featured Work</h1>
 
       <div className="grid gap-6">
-        {featuredWork.map((work, index) => (
-          <Dialog key={index}>
+        {workItems.map((item: WorkItem) => (
+          <Dialog key={item.id}>
             <DialogTrigger asChild>
               <Card className="hover:shadow-lg transition-shadow duration-300 cursor-pointer">
                 <div className="p-6 hover:bg-muted/50 transition-colors">
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                     <div className="w-full sm:w-1/3 aspect-video relative">
                       <Image 
-                        src={work.image} 
-                        alt={work.title} 
+                        src={item.imageSrc} 
+                        alt={item.imageAlt} 
                         fill
                         className="rounded-md object-cover"
                       />
                     </div>
                     <div className="flex-1">
-                      <CardTitle className="mb-2">{work.title}</CardTitle>
-                      <CardDescription>{work.description}</CardDescription>
-                      {work.link && (
-                        <a href={work.link} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block">
+                      <CardTitle className="mb-2">{item.title}</CardTitle>
+                      <CardDescription>{item.cardDescription}</CardDescription>
+                      {item.link && (
+                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block">
                           <ExternalLink className="text-muted-foreground" size={20} />
                         </a>
                       )}
+                      {!item.link && <ExternalLink className="mt-4 text-muted-foreground invisible" size={20} />}{/* Maintain layout if no link */}
                     </div>
                   </div>
                 </div>
@@ -113,17 +65,22 @@ export default function FeaturedWork() {
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>{work.title}</DialogTitle>
+                <DialogTitle>{item.dialogTitle}</DialogTitle>
               </DialogHeader>
-              <div className="space-y-4">
-                {work.content.map((paragraph, i) => (
-                  <p key={i} dangerouslySetInnerHTML={{
-                    __html: paragraph.replace(
-                      /\[([^\]]+)\]\(([^)]+)\)/g,
-                      '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">$1</a>'
-                    )
-                  }} />
+              <div className="space-y-4 text-sm sm:text-base text-muted-foreground leading-relaxed max-h-[60vh] overflow-y-auto pr-4">
+                {item.dialogContent.lead && (
+                  <p className="font-semibold text-foreground">{item.dialogContent.lead}</p>
+                )}
+                {item.dialogContent.paragraphs.map((paragraph, index) => (
+                  <p key={`para-${index}`}>{paragraph}</p>
                 ))}
+                {item.dialogContent.listItems && item.dialogContent.listItems.length > 0 && (
+                  <ul className="list-disc pl-5 space-y-1 my-2">
+                    {item.dialogContent.listItems.map((listItem, index) => (
+                      <li key={`list-${index}`}>{listItem}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </DialogContent>
           </Dialog>
