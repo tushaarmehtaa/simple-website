@@ -46,10 +46,10 @@ export default function PersonalWebsiteComponent() {
           </Button>
         </div>
 
-        <div className="flex flex-col md:flex-row items-start gap-8 mb-8 sm:mb-12">
+        <div className="flex flex-row items-start justify-between gap-4 md:gap-12">
           {/* Left Column: Text */}
           <motion.div 
-            className="md:w-3/5 w-full space-y-4"
+            className="flex-1 md:flex-none md:w-3/5 space-y-4 md:space-y-6"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -72,7 +72,7 @@ export default function PersonalWebsiteComponent() {
 
           {/* Right Column: Image */}
           <motion.div
-            className="md:w-2/5 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg"
+            className="relative overflow-hidden shadow-lg h-20 w-20 rounded-lg sm:h-24 sm:w-24 md:w-2/5 md:h-[400px] md:rounded-2xl lg:h-[450px]"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -82,6 +82,7 @@ export default function PersonalWebsiteComponent() {
               alt="Tushar Mehta"
               fill
               className="object-cover object-[83%_center]"
+              sizes="(max-width: 768px) 25vw, 40vw"
               priority
             />
           </motion.div>
